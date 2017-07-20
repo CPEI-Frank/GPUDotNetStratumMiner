@@ -181,7 +181,7 @@ namespace DotNetStratumMiner
                 Job ThisJob = (Job)e.Result;
                 SharesSubmitted++;
 
-                stratum.SendSUBMIT(ThisJob.JobID, ThisJob.Data.Substring(68 * 2, 8), ThisJob.Answer.ToString("x8"), CurrentDifficulty);
+                stratum.SendSUBMIT(ThisJob.JobID, ThisJob.NetworkTime, ThisJob.Answer.ToString("x16"), CurrentDifficulty);
             }
 
             // Mine again
