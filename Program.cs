@@ -146,7 +146,7 @@ namespace DotNetStratumMiner
         static void StartCoinMiner()
         {
             // Wait for a new job to appear in the queue
-            while (IncomingJobs.Count == 0)
+            while (IncomingJobs.Count == 0 || CurrentDifficulty == 0)
                 Thread.Sleep(500);
 
             // Get the job
